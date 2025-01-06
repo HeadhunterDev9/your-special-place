@@ -1,18 +1,19 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import LoveCounter from '../components/LoveCounter';
+import MusicPlayer from '../components/MusicPlayer';
 
 function Home() {
-  // State für den Herzeffekt
+  // State für den Herzeffekt - steuert die Animation des Herzens
   const [heartScale, setHeartScale] = useState(1);
 
-  // Diese Funktion erzeugt einen Pulseffekt für das Herz
+  // Diese Funktion erzeugt einen sanften Pulseffekt für das Herz
   const triggerHeartbeat = () => {
     setHeartScale(1.4);
     setTimeout(() => setHeartScale(1), 200);
   };
 
-  // Container-Animation für das sanfte Einblenden der Seite
+  // Container-Animation für das sanfte Einblenden der gesamten Seite
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,7 +25,7 @@ function Home() {
     }
   };
 
-  // Animation für einzelne Elemente
+  // Animation für einzelne Elemente - erzeugt einen schönen Einblend-Effekt von unten
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -63,8 +64,14 @@ function Home() {
         </p>
       </motion.header>
 
+      {/* Love Counter zeigt die gemeinsame Zeit */}
       <motion.div variants={itemVariants}>
         <LoveCounter />
+      </motion.div>
+
+      {/* Music Player für den Ostwind Soundtrack */}
+      <motion.div variants={itemVariants}>
+        <MusicPlayer />
       </motion.div>
 
       {/* Hauptbereich mit Karten */}
