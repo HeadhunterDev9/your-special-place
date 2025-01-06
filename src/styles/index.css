@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Grundlegende Stile für den Body */
+body {
+  @apply min-h-screen bg-gradient-to-b from-pink-100 to-white text-gray-900;
+  margin: 0;
+  padding: 0;
+}
+
+/* Verhindert horizontales Scrollen auf mobilen Geräten */
+#root {
+  @apply overflow-x-hidden min-h-screen;
+}
